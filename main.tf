@@ -156,7 +156,9 @@ resource "azurerm_virtual_machine" "myvm1" {
       #!/bin/bash
       sudo apt update
       sudo apt -y install nginx 
-      echo "<h1>The custom script was fully successful</h1> >> /var/www/html/index.nginx-debian.html
+      sudo rm /var/www/html/index.nginx-debian.html
+      echo "<h1>The custom script was successful</h1>
+      <h2>This is server 1</h2>" >> /var/www/html/index.nginx-debian.html
     EOF
   }
   os_profile_linux_config {
@@ -191,7 +193,9 @@ resource "azurerm_virtual_machine" "myvm2" {
       #!/bin/bash
       sudo apt update
       sudo apt -y install nginx 
-      echo "<h1>The custom script was fully successful</h1> >> /var/www/html/index.nginx-debian.html
+      sudo rm /var/www/html/index.nginx-debian.html
+      echo "<h1>The custom script was successful</h1>
+      <h2>This is server 2</h2>" >> /var/www/html/index.nginx-debian.html
     EOF
   }
   os_profile_linux_config {
