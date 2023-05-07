@@ -30,7 +30,7 @@ resource "azurerm_storage_account" "tfstorage" {
   account_replication_type = "LRS"
 
   tags = {
-    enviroment = "test"
+    enviroment = "testing"
   }
 
 }
