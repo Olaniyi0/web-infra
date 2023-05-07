@@ -30,7 +30,7 @@ resource "azurerm_storage_account" "tfstorage" {
   account_replication_type = "LRS"
 
   tags = {
-    enviroment = "testing"
+    enviroment = "test"
   }
 
 }
@@ -61,7 +61,7 @@ resource "azurerm_network_security_group" "allowTCP" {
   resource_group_name = azurerm_resource_group.test-rg.name
   location            = azurerm_resource_group.test-rg.location
   security_rule {
-    name                       = "allowInboundHTTP"
+    name                       = "allowTCP"
     priority                   = 100
     access                     = "Allow"
     direction                  = "Inbound"
